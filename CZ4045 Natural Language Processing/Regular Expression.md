@@ -9,14 +9,14 @@ Involves having a pattern to search for, and a corpus (a collection of computer-
 
 ### Regrex Patterns
 
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex1.png "pattern1")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex2.png "pattern2")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex3.png "pattern3")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex4.png "pattern4")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex5.png "pattern5")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex6.png "pattern6")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex7.png "pattern7")
-![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex8.png "pattern8")
+![Regrex](img/regrex1.png "pattern1")
+![Regrex](img/regrex2.png "pattern2")
+![Regrex](img/regrex3.png "pattern3")
+![Regrex](img/regrex4.png "pattern4")
+![Regrex](img/regrex5.png "pattern5")
+![Regrex](img/regrex6.png "pattern6")
+![Regrex](img/regrex7.png "pattern7")
+![Regrex](img/regrex8.png "pattern8")
 
 
 

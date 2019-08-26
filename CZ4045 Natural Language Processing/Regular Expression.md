@@ -1,16 +1,22 @@
 
-#2. Regrex, Text Normalization, Edit Distance
+# 2. Regrex, Text Normalization, Edit Distance
 
 
-##Regular Expression
+## Regular Expression
 _Algebraic notation for characterizing a set of strings._
 
 Involves having a pattern to search for, and a corpus (a collection of computer-readable text) of text to search through.
 
 ### Regrex Patterns
 
-![alt text](/img/Regrex1.png "Regrex 1")
-![alt text](/img/Regrex1.png "Regrex 1")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex1.png "pattern1")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex2.png "pattern2")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex3.png "pattern3")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex4.png "pattern4")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex5.png "pattern5")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex6.png "pattern6")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex7.png "pattern7")
+![Regrex](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/regrex8.png "pattern8")
 
 
 
@@ -35,7 +41,7 @@ Involves having a pattern to search for, and a corpus (a collection of computer-
 **()** : parenthesis operator; enclosed pattern act like character
 
 ##### Operator Precedence Hierarchy
-![alt text](/img/Regrex1.png "Regrex 1")
+![Hierarchy](https://github.com/aqx95/Uni_Notes/blob/master/CZ4045%20Natural%20Language%20Processing/img/op_hierarchy.png "op")
 
 _Regrex are greedy; always match largest string_
 
@@ -45,7 +51,7 @@ _Regrex are greedy; always match largest string_
 
 
 #### Substitution, Capture Groups
-e.g _s/([0-9]+)/<\1>/_<br>
+e.g _([0-9]+)/<\1>_<br>
 \1 operator is used to refer back to first pattern enclosed by ()
 
 e.g _the (.*)er they were, the \1er they will be_ <br>

@@ -94,7 +94,7 @@ where $k$ and $\beta$ are positive constant, 0 < $\beta$ < 1
 
 **Clitic** : a part of a word that can't stand on its own, can only occur when it is attached to another word.
 
-#####Common tokenization standard
+##### Common tokenization standard
 Penn Treebank tokenization
 
 #### Word Segmentation

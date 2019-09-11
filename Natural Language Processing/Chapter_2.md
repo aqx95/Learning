@@ -7,13 +7,13 @@ Assigning **probabilities** to next possible word/sequence (important in identif
 
 **n-gram**: sequence of n-words
 
-####Problem:
+#### Problem:
 Language is creative, there isn't enough data to accurately estimate probabilities from counts
 
-#####Relative Frequency count
+##### Relative Frequency count
 $$P(w|h) = P(the|its water is so transparent that ) \\ = \frac{C(its water is so transparent that the)}{C(its water its so transparent that)}$$
 
-#####Joint Probability
+##### Joint Probability
 $$P(X_{1}..X_{n}) = P(X_{1})P(X_{2}|X_{1})P(X_{3}|X^{2}_{1})...P(X_{n}|X^{n-1}_{1}) \\
 = \prod_{k=1}^n P(X_{k}|X_{1}^{k-1})
 $$
@@ -46,7 +46,7 @@ $$
 
 <br>
 
-####Perplexity (evaluation metric for language model)
+#### Perplexity (evaluation metric for language model)
 Probability of the test set, normalised by number of words
 
 $$ PP(W) = \sqrt[N]{\prod_{i=1}^N \frac{1}{P(w_i|w_{i-1})}} $$
@@ -57,13 +57,13 @@ Perplexity of any 2 language model is comporable only if they use identical voca
 
 <br>
 
-###Generalization and Zeros
+### Generalization and Zeros
 n-grams dependent on training corpus
 
 1. n-grams do better job of modeling training corpus with increasing N.
 2. Probabilities often encode specific facts about a given training corpus
 
-#####Things to note
+##### Things to note
 - Use training corpus that has similar genre to the task we are trying to accomplish
 - Get training data with appropriate dialect
 

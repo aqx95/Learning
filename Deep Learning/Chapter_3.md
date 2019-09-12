@@ -60,3 +60,30 @@ $$
 **Conditionally Independent**
 $$ \forall x \in \text x, y \in \text y, z \in \text z, p(\text x = x, \text y = y | \text z = z) = p(\text x = x | \text z = z)p(\text y = y | \text z = z)
 $$
+
+
+### Expectation, Variance, Covariance
+
+
+### Common Probability Distribution
+
+#### Bernoulli Distribution
+- Distribution over a single **binary** random variable
+
+
+#### Multinoulli Distribution
+- Distribution over a **single discrete** variable with *k* different state
+
+
+#### Gaussian Distribution
+**Why Gaussian is good choice for real number distribution without prior knowledge?**
+1. Central Limit Theorem
+- sum of many independent random variables is approximately normally distributed.
+2. Encodes maximum amount of uncertainty over real number
+
+### Exponential & Laplace Distribution
+In deep learning, want to have probability distribution with a sharp point at *x* = 0
+
+#### Exponential
+
+#### Laplace

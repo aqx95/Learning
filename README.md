@@ -1,2 +1,3 @@
-# Uni_Notes
-Compilation of undergraduate notes
+# Learning notes
+
+Machine Learning | Deep Learning 

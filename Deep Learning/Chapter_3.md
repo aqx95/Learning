@@ -64,6 +64,24 @@ $$
 
 ### Expectation, Variance, Covariance
 
+#### Expectation
+
+Discrete Variables
+$$ \mathbb E_{xP} |f(x)| = \sum_x P(x)f(x) $$
+
+Continuous Variables
+$$ \mathbb E_{xP} |f(x)| = \int p(x)f(x)dx $$
+
+#### Variance
+$$
+Var(f(x)) = \mathbb E[f(x) - \mathbb E[f(x)]^2]
+$$
+
+#### Covariance
+Indicate how much two values are linearly related to each other, as well as scale of these variables
+$$
+Cov(f(x),g(y)) = \mathbb E[(f(x)-\mathbb E[f(x)])(g(y)-\mathbb E[g(y)])]
+$$
 
 ### Common Probability Distribution
 
@@ -87,3 +105,6 @@ In deep learning, want to have probability distribution with a sharp point at *x
 #### Exponential
 
 #### Laplace
+
+
+#### Dirac & Empirical Distribution

@@ -22,6 +22,7 @@ Described using **Probability mass function (PMF)**, _P_. It maps from a state o
 #### Continuous Variable
 Described using **Probability density function (PDF)**
 - Integrate density function to find actual probability mass of a set of points
+![pdf](img/pdf.png)
 
 <br>
 
@@ -88,12 +89,18 @@ $$
 #### Bernoulli Distribution
 - Distribution over a single **binary** random variable
 
+Controlled by parameter $\phi \in [0,1]$
+ which gives probability of random variable = 1
+
+![bernoullli](img/bernoulli.png)
 
 #### Multinoulli Distribution
 - Distribution over a **single discrete** variable with *k* different state
 
 
 #### Gaussian Distribution
+![normal](img/normal.png)
+
 **Why Gaussian is good choice for real number distribution without prior knowledge?**
 1. Central Limit Theorem
 - sum of many independent random variables is approximately normally distributed.
@@ -103,8 +110,47 @@ $$
 In deep learning, want to have probability distribution with a sharp point at *x* = 0
 
 #### Exponential
-
+$$ p(x;\lambda) = \lambda1_{x\geq0}exp(-\lambda x)
+$$
 #### Laplace
+$$ Laplace(x;\mu,\gamma) = \frac{1}{2\gamma} exp(-\frac{|x-\mu|}{\gamma})
+$$
+$\gamma$  denotes the spread of distribution
 
 
 #### Dirac & Empirical Distribution
+All the mass in a probability distribution clusters around a single point
+$$ p(x) = \delta(x-\mu) $$
+Zero-valued everywhere except 0
+
+![dirac](img/dirac.png)
+
+
+### Bayes' Rule
+$$
+P(x|y) = \frac{P(x)P(y|x)}{P(y)}
+$$
+
+<br>
+
+### Information Theory
+**Intuition**
+1. Likely events should have low information content
+2. Less likely events should have higher information content
+3. Independent events should have additive information
+
+**Self information** of an event x = $x$ :
+$$ I(x) = -logP(x) $$
+Where log represents natural log *e*.
+*I(x)* written in units of **nats**, 1 nat = information gained by observing an event of probability $\frac{1}{e}$
+
+#### Shannon Entropy
+Quantify amount of uncertainty in an entire probability distribution
+$$
+H(x) = \mathbb E_{x~P}[I(x)] = -\mathbb E_{x~P}[logP(x)]
+$$
+
+Shannon entropy of a distribution is the expected amount of information in an event drawn from that distribution
+
+![shannon](img/shannon_entropy.png)
+The plot shows how distribution closer to deterministic have low Shannon entropy

@@ -73,8 +73,58 @@ n-grams dependent on training corpus
 
 
 #### Out of Vocab (OOV)
-- Unknown words
+Unknown words.
 We model unknown words by adding pseudo-word,<UNK>
 
 1. Turn problem back into closed vocabulary
 2. Replace word in training set by <UNK> based on frequency
+
+<br>
+
+### Smoothing
+
+Distributing probability mass from frequent events and give it to events never seen before (avoiding langage model from assigning zero probability)
+
+#### Laplace Smoothing
+
+**Discount**
+$$ d_c = \frac{c*}{c} $$
+where $c*$ is the discounted count
+
+**For bi-grams**
+$$ P_{Laplace}(w_n|w_{n-1}) = \frac{C(w_n,w_{n-1})+1}{C(w_n-1)+V} $$
+
+1. There will be sharp changes in counts and probabilities
+2. Practical for text classification
+
+
+#### Add-k Smoothing
+Add a fractional count instead {0.5?, 0,05?, 0.1?}
+**For bi-grams**
+$$ P_{Add-k}(w_n|w_{n-1}) = \frac{C(w_n,w_{n-1})+k}{C(w_n-1)+kV} $$
+
+1. Optimizing on devset to  choose k value
+
+
+#### Backoff & Interpolation
+Intuition: Using less context is a good thing, helping to generalize more for contexts that the model hasn’t learned much about
+
+**Backoff**
+Using lower order n-gram if we have zero evidence for higher order n-gram
+1. Need to discount higher order n-grams to save probability mass for lower order n-gram
+
+**Interpolation**
+Mix probability estimates from all the n-gram estimators
+
+$$
+P(w_n|w_{n-2}w_{n-1}) = \lambda_1P(w_n|w_{n-2}w_{n-1}) + \lambda_2P(w_n|w_{n-1}) + \lambda_3P(w_n)
+$$
+Where $\sum_{i}\lambda_i = 1$
+
+1. $\lambda$ learned from held-out set (find values that maximise likelihood of held out set)
+
+#### Kneser-Ney Smoothing
+Uses **Absolute discounting**: subtracting a fixed discount *d* from each count
+1. Look at count for all the bigrams count {0...}
+
+![kneser](img/kneser.png)

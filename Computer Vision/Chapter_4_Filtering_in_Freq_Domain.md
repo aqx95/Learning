@@ -31,7 +31,8 @@ Image size (M x N), Kernel size (m x n)
 <br>
 
 ### Impulses
-
+A unit impulse of a continuous variable t, located at
+t = 0, and denoted $\delta(t)$, is defined as
 <br>
 
 $$
@@ -48,7 +49,7 @@ Yields the value of function f(t) at the location of the impulse
 $$ \int_{-\infty}^{\infty} f(t)\delta(t-t_{0})dt = f(t_{0})$$
 
 #### Impulse Train
-Consist of continuous impulses
+Sum of infinitely many impulses $\Delta T$ units apart.
 $$
 s_{\Delta T}(t) = \sum_{k=-\infty}^{\infty} \delta(t-k\Delta T)
 $$
@@ -69,7 +70,21 @@ $$
 f(t) = \int_{-\infty}^{\infty} F(\mu)e^{j2\pi \mu t}d\mu
 $$
 
-where $\mu$ is the frequency of the sine & cosine term
 
 E.g
 ![transform](img/transform.png)
+
+Things to note:
+1. Location of zeros are inversely proportional to the width, W.
+2. Height of the lobes decreases as a function of distance from the origin
+3. Function extends to infinity for both positive and negative values of $\mu$
+
+### Convolution
+
+$$
+(f * h)(t) = \int_{-\infty}^{\infty}f(\tau)h(t-\tau)d\tau = (H \cdot F)(\mu)
+$$
+
+**Fourier Transform pair**
+$$
+(f \cdot h)(t) \leftrightarrow (H * F)(\mu)

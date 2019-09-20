@@ -113,6 +113,9 @@ Intuition: Using less context is a good thing, helping to generalize more for co
 Using lower order n-gram if we have zero evidence for higher order n-gram
 1. Need to discount higher order n-grams to save probability mass for lower order n-gram
 
+![backoff](img/backoff.png)
+
+
 **Interpolation**
 Mix probability estimates from all the n-gram estimators
 
@@ -128,3 +131,5 @@ Uses **Absolute discounting**: subtracting a fixed discount *d* from each count
 1. Look at count for all the bigrams count {0...}
 
 ![kneser](img/kneser.png)
+
+2. Subtract fixed discount *d* from each count

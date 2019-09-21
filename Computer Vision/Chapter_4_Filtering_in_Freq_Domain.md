@@ -88,3 +88,4 @@ $$
 **Fourier Transform pair**
 $$
 (f \cdot h)(t) \leftrightarrow (H * F)(\mu)
+$$

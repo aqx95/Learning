@@ -22,3 +22,18 @@ Ideally, we should choose a performance measure that corresponds well to the des
 #### Experience
 1. **Unsupervised learning** (Learn properties of the dataset; probability distribution)
 2. **Supervised learning** (Learn to predict target from features; $P(y|x)$ )
+
+
+### Linear Rregression
+$$
+\hat y =  w^Tx + b
+$$
+where $w \in \mathbb{R}^n$ is a vector of parameters (control behaviour of the system)
+
+**Performace**
+
+Mean Squared Error
+
+$$
+MSE_{test} = \frac{1}{m}\sum_i(\hat y - y)^2_i
+$$

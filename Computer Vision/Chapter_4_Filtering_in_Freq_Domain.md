@@ -89,3 +89,27 @@ $$
 $$
 (f \cdot h)(t) \leftrightarrow (H * F)(\mu)
 $$
+
+<br>
+
+### Sampling
+Required to convert continuous function into sequence of discrete values before being processed in a computer
+$$
+\bar{f}_k = f(t)s_{\Delta T}(t) = \sum_{n=-\infty}^{\infty} f(t)\delta(t-n\Delta T)
+$$
+
+<br>
+
+![sampling](img/sampling.png)
+
+$$
+\bar F(\mu) = (F * S)(\mu) = \frac{1}{\Delta T}\sum_{n=-\infty}^{\infty}F(\mu - \frac{n}{\Delta T})
+$$
+Fourier transform $\bar F(\mu)$ of sampled function $\bar{f}(t)$ is an *infinite, periodic sequence of copies of the transform of the original continuous function*
+- Continuous since it consists of copies of $F(\mu)$, which is continuous
+
+<br>
+
+#### Sampling Theorem
+
+![under_over](img/under_over.png)

@@ -113,3 +113,32 @@ Fourier transform $\bar F(\mu)$ of sampled function $\bar{f}(t)$ is an *infinite
 #### Sampling Theorem
 
 ![under_over](img/under_over.png)
+
+Extract from $\bar F(\mu)$ a single period that is equal to $F(\mu)$ is possible if:
+$$
+\frac{1}{\Delta T} > 2\mu_{max}
+$$
+
+Where sampling frequency exceeds twice the highest frequency of the content
+
+
+**Recovering $F(\mu)$ from $\bar F(\mu)$** <br>
+
+
+ ![recover](img/recovery.png)
+ Function for Figure 4.8(b):
+ $$
+ H(\mu) = \begin{cases}
+       \Delta T & -\mu_{max} \leq \mu \leq \mu_{max}\\
+       0 & otherwise \\
+    \end{cases}
+  $$
+where $H(\mu)$ is called *low-pass filter*
+
+<br>
+
+  With $F(\mu)$, recover $f(t)$ with
+  $$
+  f(t) = \int_{-\infty}^{\infty} F(\mu)e^{j2\pi \mu t}d\mu
+  $$
+  

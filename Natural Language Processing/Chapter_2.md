@@ -88,13 +88,13 @@ Unknown words.
 We model unknown words by adding pseudo-word,<UNK>
 
 1. Turn problem back into closed vocabulary
-2. Replace word in training set by <UNK> based on frequency
+2. Replace word in training set by <'UNK'> based on frequency
 
     * Choose a vocabulary that is fixed in advance
     * Convert training set of any word not in this set to <UNK>
-    * Estimate probabilities for <UNK> from its count
+    * Estimate probabilities for <'UNK'> from its count
 
-**Perplexity should be compared across language model with similar vocabulary**(choice of <UNK> will have effect on perplexity)
+**Perplexity should be compared across language model with similar vocabulary**(choice of <'UNK'> will have effect on perplexity)
 
 
 <br>

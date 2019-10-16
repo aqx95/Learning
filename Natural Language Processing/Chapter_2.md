@@ -8,13 +8,15 @@ Assigning **probabilities** to next possible word/sequence (important in identif
 **n-gram**: sequence of n-words
 
 #### Problem:
-Language is creative, there isn't enough data to accurately estimate probabilities from counts
-
+1. Language is creative, there isn't enough data to accurately estimate probabilities from counts (a lot of zero counts)
+2.  A lot of estimation to get joint probability of a word sequence
+<br>
 ##### Relative Frequency count
 $$P(w|h) = P(the|its water is so transparent that ) \\ = \frac{C(its water is so transparent that the)}{C(its water its so transparent that)}$$
 
 ##### Joint Probability
-$$P(X_{1}..X_{n}) = P(X_{1})P(X_{2}|X_{1})P(X_{3}|X^{2}_{1})...P(X_{n}|X^{n-1}_{1}) \\
+$$
+P(X_{1}..X_{n}) = P(X_{1})P(X_{2}|X_{1})P(X_{3}|X^{2}_{1})...P(X_{n}|X^{n-1}_{1}) \\
 = \prod_{k=1}^n P(X_{k}|X_{1}^{k-1})
 $$
 <br>
@@ -46,6 +48,14 @@ $$
 
 <br>
 
+##### Computing probabilities in log format
+- Multiplying probabilities may lead to numerical underflow
+$$
+p1 \times p2 \times p3 \times p4 = exp(\log{p1} + \log{p2} + \log{p3} + \log{p4})  
+$$
+
+<br>
+
 #### Perplexity (evaluation metric for language model)
 Probability of the test set, normalised by number of words
 
@@ -53,6 +63,7 @@ $$ PP(W) = \sqrt[N]{\prod_{i=1}^N \frac{1}{P(w_i|w_{i-1})}} $$
 
 
 *Minimizing perplexity = Maximizing probability*
+
 Perplexity of any 2 language model is comporable only if they use identical vocabulary
 
 <br>
@@ -79,6 +90,13 @@ We model unknown words by adding pseudo-word,<UNK>
 1. Turn problem back into closed vocabulary
 2. Replace word in training set by <UNK> based on frequency
 
+    * Choose a vocabulary that is fixed in advance
+    * Convert training set of any word not in this set to <UNK>
+    * Estimate probabilities for <UNK> from its count
+
+**Perplexity should be compared across language model with similar vocabulary**(choice of <UNK> will have effect on perplexity)
+
+
 <br>
 
 ### Smoothing
@@ -99,7 +117,7 @@ $$ P_{Laplace}(w_n|w_{n-1}) = \frac{C(w_n,w_{n-1})+1}{C(w_n-1)+V} $$
 
 
 #### Add-k Smoothing
-Add a fractional count instead {0.5?, 0,05?, 0.1?}
+Add a fractional count instead (0.5?, 0,05?, 0.1?)
 **For bi-grams**
 $$ P_{Add-k}(w_n|w_{n-1}) = \frac{C(w_n,w_{n-1})+k}{C(w_n-1)+kV} $$
 

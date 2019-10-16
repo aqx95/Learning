@@ -18,6 +18,8 @@ Involves having a pattern to search for, and a corpus (a collection of computer-
 ![Regrex](img/regrex7.png "pattern7")
 ![Regrex](img/regrex8.png "pattern8")
 
+#### Anchor
+Anchor regrex to particular place in string
 
 **^** : 1. matches start of string
 2. Negation (if it comes after the opening bracket)
@@ -38,6 +40,8 @@ Involves having a pattern to search for, and a corpus (a collection of computer-
 
 _Regrex are greedy; always match largest string_
 
+_Non-greedy_: add ? behind * / +
+
 #### Error Rates
 1. False Positive (increase Precision)
 2. False Negative (increase Recall)
@@ -45,14 +49,18 @@ _Regrex are greedy; always match largest string_
 
 #### Substitution, Capture Groups
 e.g _([0-9]+)/<\1>_<br>
-\1 operator is used to refer back to first pattern enclosed by ()
+**\1 operator** is used to refer back to first pattern enclosed by ()
+
+**Capture Group:** use of () to store pattern in memory (register)
 
 e.g _the (.*)er they were, the \1er they will be_ <br>
 set constraint for same string
 
-Capture Group: use of () to store pattern in memory (register)
+**Non-Capturing group:** (?: pattern) <br>
+eg. _(?:some|a few) (people|cats) like some \1_ <br>
+Match some cats like some cats but not some cats like some a few.
 
-Non-Capturing group: (?: pattern)
+**Look-ahead assertions :** (?= pattern) is true if pattern occurs, but match pointer doesn't advance
 
 <br>
 <br>
@@ -70,10 +78,13 @@ Non-Capturing group: (?: pattern)
 a set of lexical forms having the same stem, the same major part-of-speech, and same word sense
 
 **Types**<br>
-number of distinct words
+number of distinct words |V|
 
 **Tokens**<br>
 total number N of running words
+
+**Wordform**<br>
+fully inflected form of the word
 
 <br>
 
@@ -85,14 +96,23 @@ $$|V| = kN^{\beta}$$
 
 where $k$ and $\beta$ are positive constant, 0 < $\beta$ < 1
 
+<br>
+
+**Word Variation**
+1. Language
+2. Genre
+
+<br>
+
 
 ### Text Normalization
+Essential before any language processing of the text
 
 1. Tokenization
 2. Normalizing
 3. Segmenting sentences
 
-**Clitic** : a part of a word that can't stand on its own, can only occur when it is attached to another word.
+**Clitic** : a part of a word that can't stand on its own, can only occur when it is attached to another word. _e.g we're, what's_
 
 ##### Common tokenization standard
 Penn Treebank tokenization
@@ -106,7 +126,8 @@ Penn Treebank tokenization
 
 ![MaxMatch](img/output_maxmatch.png)
 
-**Metric** : Word error rate, compute using normalised minimum edit distance (output vs actual)
+**Metric** : Word error rate, compute using normalised minimum edit distance (output vs actual) <br>
+**Minimum edit distance:** Number of word insertion, deletion, and substitution, divided by length of golden sentence in words
 
 #### Lemmatization & Stemming
 
@@ -128,8 +149,8 @@ mainly consists of chopping off word-final affixes
 e.g Porter Stemmer
 
 #### Byte-Pair Encoding
-tackle the problem of unknown words, words that a system has not seen before
-
+Tackle the problem of unknown words, words that a system has not seen before
+<br>
 Intuition of the algorithm is to iteratively merge frequent pairs of characters
 
 #### Sentence Segmentation

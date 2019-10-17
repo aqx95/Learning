@@ -78,9 +78,29 @@ So far, grammar presented emphasise phrase structure rules, minimizing the role 
 Elements
 1. A set of categories
 ![derivation](img/categ.png)
+Function that returns a category as value when provided with desired category as argument
 
 2. A lexicon that associates words with categories
 ![derivation](img/lexi.png)
 
 3. Set of rules that govern how categories combine in context
-![derivation](img/ruless.png)
+![derivation](img/rules.png)
+First: Forward function application
+Second: Backward function application
+
+<br>
+
+![derivation](img/ccg.png)
+
+<br>
+
+**Forward & Backward Composition**
+
+![derivation](img/composition.png)
+
+**Type Raising** <br>
+Takes a category and converts it to function that seeks as an argument a function that takes the original category as its argument.
+
+![derivation](img/typeraise.png)
+
+![derivation](img/typeraise_ccg.png)

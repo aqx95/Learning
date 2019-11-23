@@ -11,6 +11,7 @@ Assigning **probabilities** to next possible word/sequence (important in identif
 1. Language is creative, there isn't enough data to accurately estimate probabilities from counts (a lot of zero counts)
 2.  A lot of estimation to get joint probability of a word sequence
 <br>
+
 ##### Relative Frequency count
 $$P(w|h) = P(the|its water is so transparent that ) \\ = \frac{C(its water is so transparent that the)}{C(its water its so transparent that)}$$
 
@@ -19,6 +20,7 @@ $$
 P(X_{1}..X_{n}) = P(X_{1})P(X_{2}|X_{1})P(X_{3}|X^{2}_{1})...P(X_{n}|X^{n-1}_{1}) \\
 = \prod_{k=1}^n P(X_{k}|X_{1}^{k-1})
 $$
+
 <br>
 
 **Intuition of n-gram**: approximate history *h* of words by just the last few words
